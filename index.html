@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            animation: desvanecerIntro 0.8s ease 2.5s forwards; /* Dura 2.5 segundos visible y se desvanece */
+            animation: desvanecerIntro 0.8s ease 2.5s forwards;
         }
 
         .mensaje-bienvenida {
@@ -43,9 +43,8 @@
             100% { opacity: 0; visibility: hidden; }
         }
 
-        /* --- NUEVOS ADORNOS Y MEJORAS PROFESIONALES EN CSS --- */
+        /* --- ADORNOS Y MEJORAS PROFESIONALES EN CSS --- */
         
-        /* Desplazamiento ultra suave y selección de texto estilizada */
         html {
             scroll-behavior: smooth;
         }
@@ -55,7 +54,6 @@
             color: white;
         }
 
-        /* Fondo general con textura y gradiente elegante */
         body {
             background-color: #0f172a;
             background-image: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
@@ -68,7 +66,6 @@
             line-height: 1.7;
         }
 
-        /* Barra de navegación superior profesional con efecto Glassmorphism */
         .titulo-principal {
             position: fixed;
             top: 0;
@@ -93,13 +90,13 @@
             font-weight: 800;
             letter-spacing: -0.5px;
             margin: 10px 0;
+            padding: 0 15px;
         }
 
         .imgsecciones {
             transform: translateY(-450px);
         }
 
-        /* Contenedor principal de secciones rediseñado (Menú lateral flotante moderno) */
         .background-secciones {
             margin-left: 0px;
             max-width: 380px;
@@ -116,7 +113,6 @@
             gap: 12px;
         }
 
-        /* Título del menú de secciones */
         .secciones {
             margin-top: 100px; 
             padding: 0;
@@ -133,7 +129,6 @@
             padding-bottom: 8px;
         }
 
-        /* Botones individuales de sección mejorados y alineados dentro de la caja */
         .seccion1, .seccion2, .seccion3, .seccion4, .seccion5 {
             background: linear-gradient(135deg, rgba(51, 65, 85, 0.6), rgba(30, 41, 59, 0.8));
             color: white;
@@ -167,7 +162,6 @@
             color: #93c5fd;
         }
 
-        /* Bloques de código con aspecto de editor profesional */
         .ejemplo1 {
             background-color: #0b0f19;
             color: #e2e8f0;
@@ -184,7 +178,6 @@
             flex-wrap: wrap;
         }
 
-        /* Subtítulos de contenido rediseñados tipo tarjeta flotante */
         .editsubtitulos {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             color: #f8fafc;
@@ -201,7 +194,6 @@
             font-size: 1.4rem;
         }
 
-        /* Tipografía, párrafos y títulos generales pulidos */
         body p {
             color: #94a3b8;
             max-width: 800px;
@@ -219,7 +211,6 @@
             display: inline-block;
         }
 
-        /* Estilo profesional para el Footer */
         footer {
             margin-top: 80px;
             padding: 30px 0;
@@ -228,6 +219,34 @@
             color: #94a3b8;
             font-size: 0.95rem;
             background: rgba(15, 23, 42, 0.5);
+        }
+
+        /* --- ADAPTABILIDAD PARA CELULARES (RESPONSIVE) --- */
+        @media screen and (max-width: 768px) {
+            body {
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 120px;
+            }
+
+            .titulo-principal h1 {
+                font-size: 1.2rem;
+            }
+
+            .background-secciones, 
+            .ejemplo1, 
+            .editsubtitulos, 
+            body p, 
+            body h2 {
+                margin-left: 0 !important;
+                max-width: 100% !important;
+            }
+
+            div[style*="max-width: 650px"], 
+            div[style*="max-width: 800px"] {
+                max-width: 100% !important;
+                overflow-x: auto;
+            }
         }
 
     </style>
@@ -460,7 +479,7 @@ namespace ConsoleApplication26
 </div>
 
     <footer>
-        Copyright: &copy; Robyirt Loreto. TODOS LOS DERECHOS RESERVADOS. Atented by: Sebtex.
+        Copyright &copy; Por Robyirt Loreto. Att: Sebtex.
     </footer>
 
 </body>
