@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* --- PANTALLA DE BIENVENIDA (MODO CARGA) --- */
+        #pantalla-bienvenida {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: desvanecerIntro 0.8s ease 2.5s forwards; /* Dura 2.5 segundos visible y se desvanece */
+        }
+
+        .mensaje-bienvenida {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            animation: latido 1.5s infinite ease-in-out;
+            padding: 0 20px;
+        }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; text-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
+        }
+
+        @keyframes desvanecerIntro {
+            0% { opacity: 1; visibility: visible; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        /* --- NUEVOS ADORNOS Y MEJORAS PROFESIONALES EN CSS --- */
+        
+        /* Desplazamiento ultra suave y selección de texto estilizada */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background-color: #3182ce;
+            color: white;
+        }
+
+        /* Fondo general con textura y gradiente elegante */
+        body {
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 40%);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #cbd5e1;
+            margin: 0;
+            padding-top: 100px;
+            padding-left: 50px; 
+            line-height: 1.7;
+        }
+
+        /* Barra de navegación superior profesional con efecto Glassmorphism */
+        .titulo-principal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .titulo-principal h1 {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin: 10px 0;
+        }
+
+        .imgsecciones {
+            transform: translateY(-450px);
+        }
+
+        /* Contenedor principal de secciones rediseñado (Menú lateral flotante moderno) */
+        .background-secciones {
+            margin-left: 0px;
+            max-width: 380px;
+            margin-bottom: 50px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.85));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Título del menú de secciones */
+        .secciones {
+            margin-top: 100px; 
+            padding: 0;
+            background: none;
+            color: #38bdf8;
+            box-shadow: none;
+            max-width: 380px;
+            margin-left: 0px; 
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border-bottom: 2px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 8px;
+        }
+
+        /* Botones individuales de sección mejorados y alineados dentro de la caja */
+        .seccion1, .seccion2, .seccion3, .seccion4, .seccion5 {
+            background: linear-gradient(135deg, rgba(51, 65, 85, 0.6), rgba(30, 41, 59, 0.8));
+            color: white;
+            padding: 12px 16px;
+            border-radius: 10px;
+            max-width: 100%;
+            text-align: left;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-left: 0px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .seccion1:hover, .seccion2:hover, .seccion3:hover, .seccion4:hover, .seccion5:hover {
+            transform: translateX(6px);
+            border-color: #38bdf8;
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(30, 41, 59, 0.9));
+        }
+
+        .seccion1 a, .seccion2 a, .seccion3 a, .seccion4 a, .seccion5 a {
+            color: #38bdf8;
+            text-decoration: none;
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .seccion1 a:hover, .seccion2 a:hover, .seccion3 a:hover, .seccion4 a:hover, .seccion5 a:hover {
+            color: #93c5fd;
+        }
+
+        /* Bloques de código con aspecto de editor profesional */
+        .ejemplo1 {
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            border-radius: 12px;
+            max-width: 680px;
+            margin-left: 390px;
+            border: 1px solid #1e293b;
+        }
+
+        .fila-secciones {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Subtítulos de contenido rediseñados tipo tarjeta flotante */
+        .editsubtitulos {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: #f8fafc;
+            padding: 22px 25px;
+            border-radius: 12px;
+            border-left: 5px solid #38bdf8;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+            border-right: 1px solid rgba(56, 189, 248, 0.2);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            margin-top: 70px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+
+        /* Tipografía, párrafos y títulos generales pulidos */
+        body p {
+            color: #94a3b8;
+            max-width: 800px;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        body h2 {
+            color: #38bdf8;
+            font-size: 1.5rem;
+            margin-top: 45px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(56, 189, 248, 0.15);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        /* Estilo profesional para el Footer */
+        footer {
+            margin-top: 80px;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+            color: #94a3b8;
+            font-size: 0.95rem;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Mensaje de bienvenida emergente inicial -->
+    <div id="pantalla-bienvenida">
+        <div class="mensaje-bienvenida">
+            Bienvenido Profesor Robyirt ;)
+        </div>
+    </div>
+
+    <header class="titulo-principal">
+        <h1>Modificadores de acceso y encapsulados de clase</h1>
+    </header>
+
+    <div class="background-secciones">
+        <h1 class="secciones">
+             Secciones de la página:
+        </h1>
+
+        <h2 class="seccion1">
+            <a href="#id1">¿Qué es un encapsulamiento?</a>
+        </h2>
+
+        <h2 class="seccion2">
+            <a href="#id2">¿Qué es un modificador de acceso?</a>
+        </h2>
+
+        <h2 class="seccion3">
+            <a href="#id3">¿Para qué sirve el encapsulamiento?</a>
+        </h2>
+
+        <h2 class="seccion4">
+            <a href="#id4">¿Para que sirven los modificadores de acceso?</a>
+        </h2>
+
+         <h2 class="seccion5">
+            <a href="#id5">Ejemplos</a>
+        </h2>
+    </div>
+    
+
+    <h1 class="editsubtitulos" style="scroll-margin-top: 100px;" id="id1">¿Que es un encapsulamiento?</h1>
+
+    <p style="max-width: 800px">El encapsulamiento (o ocultamiento de información) es el principio que consiste en agrupar los datos (variables o campos) y los métodos que operan sobre esos datos dentro de una misma unidad (la clase), y restringir el acceso directo a los componentes internos desde el exterior. Su funcion es evitar que el estado interno de un objeto sea modificado de manera incorrecta o inválida por código externo. En su lugar, el objeto expone una interfaz controlada (generalmente a través de propiedades o métodos públicos) para interactuar con él. Su analogía es simple: piensa en un automóvil. El motor, los pistones y el sistema de inyección están encapsulados (ocultos) bajo el capó. Tú no interactúas directamente con los pistones; en su lugar, usas una interfaz controlada: el volante, los pedales y la llave de encendido.</p>
+
+    <h1 class="editsubtitulos" style="scroll-margin-top: 100px;" id="id2">¿Que son los modificadores de acceso?</h1>
+
+    <p style="max-width: 800px">Los modificadores de acceso son palabras clave que se utilizan para definir la visibilidad o el nivel de acceso que tienen las clases, métodos, propiedades y otros miembros desde otras partes del código o de otros ensamblados (archivos .dll). </p>
+
+        <h2>Modificadores principales</h2>
+
+        <p style="max-width: 800px">1. Public: El acceso no está limitado. Se puede acceder al miembro desde cualquier parte del código, incluso desde otros proyectos o ensamblados.</p>
+        <p style="max-width: 800px">2. Private: El acceso está limitado exclusivamente a la clase en la que se declara. Ninguna otra clase (ni siquiera las herederas) puede verlo ni modificarlo. Es el nivel por defecto para los miembros de una clase (campos y métodos).</p>
+        <p style="max-width: 800px">3. Protected: El acceso está limitado a la clase contenedora y a cualquier clase que herede de ella (clases derivadas), incluso si están en otros ensamblados.</p>
+        <p style="max-width: 800px">4. Internal: El acceso está limitado al ensamblaje actual (al proyecto de C# actual). No se puede acceder desde otro proyecto externo, pero sí desde cualquier clase dentro del mismo proyecto.</p>
+        <p style="max-width: 800px">5. Protected internal: Es una combinación de ambos. El acceso está permitido desde el ensamblaje actual o desde cualquier clase derivada ubicada en otro ensamblaje.</p>
+        <p style="max-width: 800px">6. Private protected (introducido formalmente en C# 7.2, pero vale la pena mencionarlo como evolución): El acceso se permite únicamente dentro de la clase contenedora o en clases derivadas que estén en el mismo ensamblaje.</p>
+
+        <h1 class="editsubtitulos" style="scroll-margin-top: 100px;" id="id3">¿Para que sirve el encapsulamiento?</h1>
+
+        <p style="max-width: 800px">1. Garantiza la integridad de los datos: Evita que partes externas del programa modifiquen variables críticas con valores inválidos o erróneos. Por ejemplo, asegura que la edad de una persona nunca sea un número negativo o que un saldo bancario no se altere libremente sin pasar por validaciones.</p>
+
+        <p style="max-width: 800px">2. Facilita el mantenimiento y los cambios: Al ocultar los detalles internos de una clase, puedes rediseñar o mejorar su código por dentro sin miedo a que se rompa el resto de la aplicación, siempre y cuando mantengas la misma forma de interactuar con ella desde el exterior.</p>
+
+        <p style="max-width: 800px">3. Simplifica el uso del código: Oculta la complejidad innecesaria. Quien use tu clase solo verá los métodos y propiedades que necesita, sin distraerse con variables o funciones auxiliares que operan en segundo plano.</p>
+
+        <h1 class="editsubtitulos" style="scroll-margin-top: 100px;" id="id4">¿Para qué sirven los modificadores de acceso?</h1>
+
+        <p style="max-width: 800px">Los modificadores son las herramientas exactas con las que construyes ese encapsulamiento, permitiéndote decidir quién puede ver y usar cada parte del código:</p>
+
+        <p style="max-width: 800px">1. public (Público): Sirve para exponer al mundo exterior las funciones, propiedades o clases que necesitan ser utilizadas por otras partes del sistema o por otros desarrolladores (como los botones o la interfaz de una máquina).</p>
+
+        <p style="max-width: 800px">2. private (Privado): Sirve para blindar y ocultar los datos sensibles y la lógica interna de una clase. Nadie desde afuera puede verlos ni modificarlos, lo que evita errores accidentales. Es el nivel de seguridad más estricto a nivel de clase.</p>
+
+        <p style="max-width: 800px">3. protected (Protegido): Sirve para crear una relación de confianza dentro de una familia de clases (herencia). Permite que una clase padre comparta ciertos métodos o variables con sus clases hijas, manteniéndolos ocultos para el resto del programa.</p>
+
+        <p style="max-width: 800px">4. internal (Interno): Sirve para proteger el código a nivel de proyecto. Permite que clases o métodos sean visibles entre archivos de tu mismo proyecto o librería de C#, pero evita que otros proyectos o librerías externas los utilicen o dependan de ellos.</p>
+
+            <h1 class="editsubtitulos" style="scroll-margin-top: 100px;" id="id5">Ejemplos</h1>
+            <h2>Ejercicio de encapsulamiento</h2>
+            <p style="max-width: 800px">Desarrollar un sistema de gestión para una cuenta bancaria digital en C#. El programa debe garantizar que el saldo del cliente se mantenga protegido de modificaciones directas y erróneas desde fuera de la clase. Toda operación de depósito o retiro debe pasar obligatoriamente por controles de validación lógicos, asegurando montos válidos y fondos suficientes.</p>
+            <div style="background-color: #121212; border-radius: 12px; padding: 20px; font-family: 'Consolas', monospace; color: #d4d4d4; box-shadow: 0 10px 30px rgba(0,0,0,0.6); max-width: 650px;">
+    
+    <div style="display: flex; gap: 6px; margin-bottom: 15px;">
+        <span style="width: 12px; height: 12px; background-color: #ff5f56; border-radius: 50%;"></span>
+        <span style="width: 12px; height: 12px; background-color: #ffbd2e; border-radius: 50%;"></span>
+        <span style="width: 12px; height: 12px; background-color: #27c93f; border-radius: 50%;"></span>
+    </div>
+    
+    <pre style="margin: 0; white-space: pre-wrap;"><code>
+
+    </code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication26
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Instanciamos la clase CuentaBancaria
+            CuentaBancaria miCuenta = new CuentaBancaria();
+
+            // Realizamos operaciones de manera segura a través de los métodos públicos
+            miCuenta.Depositar(1000.00);
+            miCuenta.Retirar(350.50);
+
+            // Consultamos el saldo final de forma controlada
+            Console.WriteLine("El saldo actual en la cuenta es: $" + miCuenta.ObtenerSaldo());
+
+            Console.ReadKey();
+        }
+    }
+
+    class CuentaBancaria
+    {
+        // Atributo privado: Nadie fuera de esta clase puede alterarlo directamente
+        private double saldo = 0.0;
+
+        // Método público para ingresar dinero con validación previa
+        public void Depositar(double monto)
+        {
+            if (monto > 0)
+            {
+                saldo += monto;
+                Console.WriteLine("Depósito exitoso de: $" + monto);
+            }
+            else
+            {
+                Console.WriteLine("El monto a depositar debe ser mayor a cero.");
+            }
+        }
+
+        // Método público para retirar dinero de forma segura
+        public void Retirar(double monto)
+        {
+            if (monto > 0 && monto <= saldo)
+            {
+                saldo -= monto;
+                Console.WriteLine("Retiro exitoso de: $" + monto);
+            }
+            else
+            {
+                Console.WriteLine("Fondos insuficientes o monto inválido.");
+            }
+        }
+
+        // Método público para consultar el saldo privado
+        public double ObtenerSaldo()
+        {
+            return saldo;
+        }
+    }
+}</pre>
+
+
+</div>
+
+<h2>Ejercicio de modificadores de acceso</h2>
+            <p style="max-width: 800px">Simular la estructura de datos para un sistema escolar mediante herencia de clases. El programa debe demostrar de forma práctica el uso y alcance de los modificadores de acceso (public, private y protected), comprobando qué variables pueden ser expuestas al programa principal, cuáles permanecen ocultas de forma estricta en su clase, y cuáles se comparten exclusivamente con clases derivadas.</p>
+            <div style="background-color: #121212; border-radius: 12px; padding: 20px; font-family: 'Consolas', monospace; color: #d4d4d4; box-shadow: 0 10px 30px rgba(0,0,0,0.6); max-width: 650px;">
+
+    <div style="display: flex; gap: 6px; margin-bottom: 15px;">
+        <span style="width: 12px; height: 12px; background-color: #ff5f56; border-radius: 50%;"></span>
+        <span style="width: 12px; height: 12px; background-color: #ffbd2e; border-radius: 50%;"></span>
+        <span style="width: 12px; height: 12px; background-color: #27c93f; border-radius: 50%;"></span>
+    </div>
+    
+    <pre style="margin: 0; white-space: pre-wrap;"><code>
+
+    </code>using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication26
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Creamos un objeto de la clase derivada Estudiante
+            Estudiante alumno = new Estudiante();
+
+            // 'Nombre' es público, por lo que se puede asignar directamente desde el Main
+            alumno.Nombre = "Alejandro";
+
+            // Las siguientes líneas generarían error si se descomentan porque respetan los modificadores:
+            // alumno.edad = 20;          // Error: 'edad' es private (solo visible en Estudiante)
+            // alumno.calificacion = 19;    // Error: 'calificacion' es protected (no visible desde Main)
+
+            // Usamos el método público para mostrar todos los datos recopilados internamente
+            alumno.MostrarDatos();
+
+            Console.ReadKey();
+        }
+    }
+
+    class Persona
+    {
+        // Protegido: Accesible dentro de esta clase y en clases que hereden de ella
+        protected double calificacion = 18.5;
+    }
+
+    // Clase Derivada (Hereda de Persona)
+    class Estudiante : Persona
+    {
+        // Público: Accesible desde cualquier lugar del proyecto
+        public string Nombre;
+
+        // Privado: Solo se puede utilizar dentro de la clase Estudiante
+        private int edad = 21;
+
+        public void MostrarDatos()
+        {
+            Console.WriteLine("--- DATOS DEL ESTUDIANTE ---");
+            Console.WriteLine("Nombre (Público): " + Nombre);
+            Console.WriteLine("Edad (Privado, accedido internamente): " + edad);
+            Console.WriteLine("Calificación (Protegido por herencia): " + calificacion);
+        }
+    }
+}</pre>
+</div>
+
+    <footer>
+        Copyright: &copy; Robyirt Loreto. TODOS LOS DERECHOS RESERVADOS. Atented by: Sebtex.
+    </footer>
+
+</body>
+</html>
